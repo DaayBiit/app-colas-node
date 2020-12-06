@@ -4,7 +4,7 @@ var socket = io();
 
 var searchParams = new URLSearchParams(window.location.search);
 
-var lable = $('small');
+var label = $('small');
 
 if (!searchParams.has('escritorio')) {
     window.location = 'index.html';
@@ -21,6 +21,7 @@ $('button').on('click', function(){
         console.log(resp);
 
         if(resp === 'No hay tickets'){
+            label.text(resp);
             alert(resp);
             return;
         }
